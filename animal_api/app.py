@@ -5,21 +5,21 @@ app = Flask(__name__)
 
 # animal generator route here
 
-@app.route('/get_animal', methods = ['Get'])
+@app.route('/get_animal', methods = ['GET'])
 def get_animal():
-    return random.choise['cow', 'pig', 'horse']
+    return random.choice(['cow', 'pig', 'horse'])
 
 
 # animal noise generator route here
 
-@app.route('/get_noise', hethods = ['POST'])
+@app.route('/get_noise', methods = ['POST'])
 def get_noise():
     noises = {
-        "cow" : "moo"
-        "pig" : "oink"
+        "cow" : "moo",
+        "pig" : "oink",
         "horse" : "neigh"
     }
-    return noises[request.data.decode('utf8')]
+    return noises[request.data.decode('utf-8')]
 
 
 
